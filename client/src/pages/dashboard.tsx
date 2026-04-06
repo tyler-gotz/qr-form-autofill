@@ -5,8 +5,12 @@ import Loader from '@/components/loader'
 import { Avatar, AvatarFallback } from '@/components/ui/avatar'
 import { Card, CardContent } from '@/components/ui/card'
 import PatientTable from '@/components/patient-table'
+import { Button } from '@/components/ui/button'
+import { useNavigate } from 'react-router'
 
 const Dashboard: React.FC = () => {
+    const navigate = useNavigate()
+
     const { data: patients, isLoading } = useQuery({
         queryKey: ["patients"],
         queryFn: getPatients,
@@ -21,6 +25,13 @@ const Dashboard: React.FC = () => {
             <div className="flex justify-between">
                 <h1 className="text-2xl font-bold">Patient Dashboard</h1>
                 <div className="flex items-center gap-2">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => navigate("/patients/new")}
+                    >
+                        + New Patient
+                    </Button>
                     <Avatar>
                         <AvatarFallback>TG</AvatarFallback>
                     </Avatar>

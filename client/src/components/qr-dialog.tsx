@@ -18,10 +18,10 @@ const QRDialog: React.FC<QRDialogProps> = ({ patient }) => {
             </AlertDialogTrigger>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Prefill Form</AlertDialogTitle>
+                    <AlertDialogTitle>Patient Intake Form</AlertDialogTitle>
                     <AlertDialogDescription className="space-y-4">
                         <p>
-                            Generate a prefilled form using{" "}
+                            Scan the QR code below to access {" "}
                             <span className="font-medium">
                                 {patient.firstName} {patient.lastName}
                             </span>
@@ -29,7 +29,7 @@ const QRDialog: React.FC<QRDialogProps> = ({ patient }) => {
                         </p>
 
                         <p className="text-sm text-muted-foreground">
-                            Scan the QR code below or use the link to open the prefilled form.
+                            Scan the QR code below or use the link to open the intake form.
                         </p>
                         <div className="flex justify-center pt-2">
                             <QRCodeCanvas
